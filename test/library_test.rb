@@ -92,7 +92,6 @@ class LibraryTest < Minitest::Test
   end
 
   def test_cannot_checkout_currently_checkout_out_books
-    skip
     dpl = Library.new("Denver Public Library")
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
     jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
