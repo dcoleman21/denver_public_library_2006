@@ -21,4 +21,10 @@ class Author
     @books << new_books
     return new_books
   end
+
+  def sort_books_by_year
+    @books.sort_by do |book|
+      book.publication_year
+    end 
+  end
 end
