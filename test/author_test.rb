@@ -39,4 +39,16 @@ class AuthorTest < Minitest::Test
     assert_instance_of Book, villette
     assert_equal [jane_eyre, villette], charlotte_bronte.books
   end
+
+  def test_can_sort_books_by_year
+    charlotte_bronte = Author.new({
+      first_name: "Charlotte",
+      last_name: "Bronte"
+    })
+    jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    professor = charlotte_bronte.write("The Professor", "1857")
+    villette = charlotte_bronte.write("Villette", "1853")
+
+    assert_equal [jane_eyre, villette, professor], charlotte_bronte.sort_books_by_year
+  end
 end
