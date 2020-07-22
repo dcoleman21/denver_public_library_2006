@@ -27,6 +27,7 @@ class Library
   def checkout(book)
     if @books.include?(book)
       @checked_out_books << book
+      @books.delete(book)
       true
     else
       false
